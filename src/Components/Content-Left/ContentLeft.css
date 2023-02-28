@@ -1,0 +1,83 @@
+.user-details-padding {
+  padding-top: 3rem;
+  padding-left: 11rem;
+  padding-right: 6.5rem;
+}
+
+.user-details {
+  color: white;
+
+  display: flex;
+}
+
+.user-details-right {
+  padding-top: 0.75rem;
+  padding-left: 2rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.user-profile-img {
+  height: 9rem;
+  width: 9rem;
+}
+
+.user-name {
+  font-size: 1.75rem;
+
+  margin: 0;
+}
+
+.user-username {
+  font-size: 1.15rem;
+  font-weight: normal;
+
+  margin: 0;
+}
+
+.user-follow-btn {
+  font-size: 1rem;
+  color: white;
+  font-weight: normal;
+
+  padding: 0.5rem 4rem;
+
+  background-color: #ff004f;
+
+  border: none;
+  border-radius: 3px;
+}
+
+.profile-details {
+  color: white;
+
+  display: flex;
+  gap: 1.5rem;
+
+  padding-top: 1.5rem;
+}
+
+.profile-stats {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.profile-category {
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+.profile-nums {
+  font-size: 1.15rem;
+}
+
+.user-bio {
+  color: white;
+  font-weight: 300;
+  font-size: 1.05rem;
+
+  padding: 1.5rem 0;
+}

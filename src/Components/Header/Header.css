@@ -1,0 +1,45 @@
+.header-container {
+  display: flex;
+  align-items: center;
+
+  height: 6.5vh;
+
+  border-bottom: 2px #726a6a solid;
+}
+
+.header-left {
+  display: flex;
+
+  padding-left: 3rem;
+}
+
+.header-left > * {
+  padding-left: 2rem;
+}
+
+.header-ham {
+  color: white;
+  font-size: 2rem;
+}
+
+.header-logo {
+  height: 2.5rem;
+  width: 10rem;
+}
+
+.header-right {
+  padding-left: 17.5rem;
+}
+
+.header-navlist {
+  list-style: none;
+
+  display: flex;
+}
+
+.header-list-item {
+  padding-left: 3rem;
+
+  font-size: 1.25rem;
+  color: white;
+}
