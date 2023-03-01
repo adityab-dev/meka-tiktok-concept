@@ -15,19 +15,19 @@ function App(): ReactComponent {
 
   return (
     <div className="app-container">
-      {enterWatchMode ? (
+      <div className={`${!enterWatchMode ? "display-none" : ""}`}>
         <Backdrop />
-      ) : (
-        <>
-          <Header />
-          <main>
-            <section className="content-container">
-              <ContentLeft />
-              <ContentRight />
-            </section>
-          </main>
-        </>
-      )}
+      </div>
+
+      <div className={`${enterWatchMode ? "display-none" : ""}`}>
+        <Header />
+        <main>
+          <section className="content-container">
+            <ContentLeft />
+            <ContentRight />
+          </section>
+        </main>
+      </div>
     </div>
   );
 }

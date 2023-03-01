@@ -1,6 +1,7 @@
 import React from "react";
 
 const defaultContext = {
+  onStart: true,
   enterWatchMode: false,
   disableDown: false,
   disableUp: false,
@@ -10,6 +11,9 @@ const defaultContext = {
   watchModeTransition: (flag: boolean) => {},
   resetCurrentIndex: () => {},
   onVideoClick: (index: number) => {},
+  memoizedVideos: [{ src: "", index: 0 }],
+  userHasClicked: () => {},
+  resetOnStart: () => {},
 };
 
 const context = React.createContext(defaultContext);

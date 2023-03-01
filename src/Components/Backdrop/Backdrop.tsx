@@ -1,12 +1,10 @@
 import { AiOutlineArrowUp, AiOutlineArrowDown } from "react-icons/ai";
 import { GrClose } from "react-icons/gr";
 
-import { videos } from "../Content-Left/EmbeddeShorts/EmbeddedShorts";
-
 import { useContext } from "react";
+import context from "../../context/app-context";
 
 import "./Backdrop.css";
-import context from "../../context/app-context";
 
 function Backdrop() {
   const {
@@ -17,6 +15,9 @@ function Backdrop() {
     downChangeHandler,
     watchModeTransition,
     resetCurrentIndex,
+    memoizedVideos,
+    resetOnStart,
+    onStart,
   } = useContext(context);
 
   return (
@@ -26,6 +27,7 @@ function Backdrop() {
         if (event.key === "Escape") {
           resetCurrentIndex();
           watchModeTransition(false);
+          resetOnStart();
         }
       }}
       onWheel={(event) => {
@@ -38,13 +40,14 @@ function Backdrop() {
       className="backdrop"
     >
       <div className="video-container">
-        <iframe src={videos[currnetVideoIndex].src} />
+        {!onStart ? <iframe src={memoizedVideos[currnetVideoIndex].src} /> : null}
       </div>
 
       <button
         onClick={() => {
           resetCurrentIndex();
           watchModeTransition(false);
+          resetOnStart();
         }}
         className="close-btn"
       >
