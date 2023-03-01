@@ -1,9 +1,13 @@
 .shorts-grid-contianer {
   display: grid;
-  gap: 0.5rem;
   grid-template-columns: repeat(3, 15rem);
   grid-auto-rows: 15rem;
+  gap: 0.5rem;
 }
+
+/* .shorts-video-container {
+
+} */
 
 iframe {
   height: 100%;
@@ -11,4 +15,20 @@ iframe {
 
   border: none;
   border-radius: 5px;
+}
+
+.iframe-btn {
+  height: 15rem;
+  width: 15rem;
+
+  position: absolute;
+
+  cursor: pointer;
+
+  opacity: 0%;
+
+  border: none;
+  border-radius: 7px;
+
+  padding: 0;
 }

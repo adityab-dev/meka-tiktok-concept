@@ -1,0 +1,78 @@
+.backdrop {
+  width: 100vw;
+  height: 100vh;
+
+  background-color: black;
+}
+
+.backdrop:focus {
+  outline: none;
+}
+
+.backdrop-btns {
+  font-size: 2.75rem;
+  color: white;
+  text-align: center;
+
+  background-color: rgb(43, 37, 37);
+
+  padding: 1rem;
+
+  border-radius: 100%;
+
+  display: flex;
+  align-items: center;
+
+  cursor: pointer;
+}
+
+/* .backdrop-btns:hover {
+  background-color: rgb(80, 68, 68);
+} */
+
+.btn-up {
+  position: absolute;
+  top: 25%;
+  right: 5rem;
+}
+
+.btn-down {
+  position: absolute;
+  bottom: 25%;
+  right: 5rem;
+}
+
+.disabled-btn {
+  background-color: gray;
+
+  cursor: not-allowed;
+}
+
+.video-container {
+  width: 30rem;
+  height: 40rem;
+
+  position: absolute;
+  top: 10rem;
+  left: 27.5rem;
+}
+
+.close-btn {
+  background-color: rgb(61, 54, 54);
+
+  font-size: 2rem;
+
+  padding: 1rem;
+
+  display: flex;
+  align-items: center;
+
+  border-radius: 100%;
+
+  position: absolute;
+
+  top: 2rem;
+  right: 5.75rem;
+
+  cursor: pointer;
+}

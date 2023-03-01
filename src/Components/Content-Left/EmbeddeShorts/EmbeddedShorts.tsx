@@ -1,66 +1,45 @@
+import { useContext } from "react";
+
+import context from "../../../context/app-context";
+
 import { ReactComponent } from "../../../Types/types";
 
 import "./EmbeddedShorts.css";
 
+export const videos: Array<{ src: string; index: number }> = [
+  { src: "https://www.youtube.com/embed/FkNdEfxYYc4", index: 0 },
+  { src: "https://www.youtube.com/embed/h5vscpsP6QU", index: 1 },
+  { src: "https://www.youtube.com/embed/iLRXM8tGBXI", index: 2 },
+  { src: "https://www.youtube.com/embed/u9fPtsBCmCc", index: 3 },
+  { src: "https://www.youtube.com/embed/ap6Qj5RvSKw", index: 4 },
+  { src: "https://www.youtube.com/embed/WDGPWOlcqms", index: 5 },
+  { src: "https://www.youtube.com/embed/GVsxQm90zJA", index: 6 },
+  { src: "https://www.youtube.com/embed/IotRdWPWYOY", index: 7 },
+  { src: "https://www.youtube.com/embed/sEkK-V0o8wE", index: 8 },
+];
+
 function EmbeddedShorts(): ReactComponent {
+  const { watchModeTransition, onVideoClick } = useContext(context);
+
   return (
     <section className="shorts-grid-contianer">
-      <iframe
-        onClick={(event) => console.log(event)}
-        src="https://www.youtube.com/embed/FkNdEfxYYc4"
-        title="I made the ball be on beat the"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-      ></iframe>
-
-      <iframe
-        src="https://www.youtube.com/embed/h5vscpsP6QU"
-        title="How villains are made😭💔"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-      ></iframe>
-
-      <iframe
-        src="https://www.youtube.com/embed/iLRXM8tGBXI"
-        title="would you eat this? #shorts"
-        // frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-      ></iframe>
-
-      <iframe
-        src="https://www.youtube.com/embed/u9fPtsBCmCc"
-        title="Flooded Rug Heavy With Mud"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-      ></iframe>
-
-      <iframe
-        src="https://www.youtube.com/embed/ap6Qj5RvSKw"
-        title="Thoughts that go through my head while piping letters"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-      ></iframe>
-
-      <iframe
-        src="https://www.youtube.com/embed/crK_kFWDhKw"
-        // title="My sister gave a very strange reaction… 🧐"
-        // allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-      />
-
-      <iframe
-        src="https://www.youtube.com/embed/FkNdEfxYYc4"
-        title="I made the ball be on beat the WHOLE time"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-      />
-
-      <iframe
-        onClick={(event) => console.log(event)}
-        src="https://www.youtube.com/embed/IotRdWPWYOY"
-        title="Magic Vs reality / check pinned comment"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-      ></iframe>
-
-      <iframe
-        src="https://www.youtube.com/embed/sEkK-V0o8wE"
-        title="Magnet Satisfaction Pills #shorts"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-      ></iframe>
+      {videos.map((video) => {
+        return (
+          <div
+            key={video.src}
+            className="shorts-video-container"
+          >
+            <button
+              className="iframe-btn"
+              onClick={() => {
+                watchModeTransition(true);
+                onVideoClick(video.index);
+              }}
+            ></button>
+            <iframe src={video.src} />
+          </div>
+        );
+      })}
     </section>
   );
 }
